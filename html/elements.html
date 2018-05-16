@@ -1,0 +1,22 @@
+<div class="title text-left"> Great! Please add some </div>
+<span class="big-title text-left"> elements </span>
+<span class="title text-left"> to your time study. </span>
+<br><br>
+<!-- form-profile.html -->
+<fieldset data-ng-repeat="choice in choices">
+    <div class="row">
+      <div class="elements">
+        <input type="text" class="form-elements form-control" ng-model="choice.name" name="" placeholder="Type a new element here!">
+      </div>
+      <div class="remove">
+        <button class="remove-btn btn" ng-show="$last" ng-click="removeChoice()"><span class="glyphicon glyphicon-trash"></span></button>
+      </div>
+    </div>
+</fieldset>
+  <div class="row">
+  <button class="addfields btn" ng-click="addNewChoice()" type="button"><span class="glyphicon glyphicon-plus"></span> Add elements</button>
+</div>
+
+<div class="next">
+    <a ui-sref="form.allowances">Next  <span class="glyphicon glyphicon-circle-arrow-right"></span></a>
+</div>

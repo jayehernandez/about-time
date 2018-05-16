@@ -1,0 +1,51 @@
+<div class="pink section-title">{{formData.title}}</div>
+<div id="stopwatch" class="container" ng-controller="stopwatchController">
+  <div class="cycle">
+    CYCLE #{{cycleNum}}
+    <br>
+    {{currentElement}}
+  </div>
+  <div class="time">
+    <span>{{time.minutes}}</span>.<span>{{time.seconds}}</span>
+  </div>
+  <div class="row">
+    <div class="column">
+      <div ng-if="running == false">
+        <button class="time-btn btn" ng-click="startStopwatch()">Start<span class="tooltiptext">Start time study</span></button>
+      </div>
+      <div ng-if="running == true">
+        <button class="time-btn btn" ng-click="pauseStopwatch()">Pause<span class="tooltiptext">Pause time study</span></button>
+      </div>
+    </div>
+    <div class="column">
+      <button class="time-btn btn" ng-click="nextElement()">{{lastElement ? 'New' : 'Next'}}<span class="tooltiptext">End this element <br>& Go to next</span></button>
+    </div>
+    <div class="column">
+      <div ng-if="lastElement">
+        <button class="time-btn btn" ng-click="stopStopwatch()">Stop<span class="tooltiptext">Stop time study<br>& See results</span></button>
+      </div>
+    </div>
+  </div>
+  <div class="rating">
+  <div ng-if="lastElement">
+    <div class="cycle">  RATING</div>
+    <div class="btn-group btn-group-toggle" data-toggle="buttons">
+      <label class="btn btn-default">
+        <input type="radio" ng-model="cycle.rating" value="0.9" class="cycle-rating">0.9
+      </label>
+      <label class="btn btn-default">
+        <input type="radio" ng-model="cycle.rating" value="1.0" class="cycle-rating">1.0
+      </label>
+      <label class="btn btn-default">
+        <input type="radio" ng-model="cycle.rating" value="1.1" class="cycle-rating">1.1
+      </label>
+    </div>
+    <div ng-if="errorMessage" class="pink errorMessage"><span class="glyphicon glyphicon-warning-sign error"></span>&nbsp;&nbsp;&nbsp;Please choose!
+    </div>
+  </div>
+  </div>
+</div>
+<div class="pink section-title">Stopwatch</div>
+<div id="footer">
+  made with&nbsp;<span class="pink glyphicon glyphicon-heart"></span>&nbsp;by jaye hernandez
+</div>

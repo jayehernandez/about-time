@@ -1,0 +1,80 @@
+<div class="pink section-title">Results for {{input.title}}</div>
+<div id="results" class="container" ng-controller="resultsController">
+  <div class="results-table">
+    <div class="table-responsive">
+      <table class="table table-hover">
+        <tr>
+          <th>Cycle</th>
+          <th ng-repeat="element in input.elements">{{element.name}}</th>
+        </tr>
+        <tr ng-repeat="log in input.log">
+          <td>{{$index+1}}</td>
+          <td ng-repeat="timestamp in log track by $index">{{timestamp}}</td>
+        </tr>
+        <tr>
+          <td>AVE</td>
+          <td ng-repeat="ave in input.average track by $index">{{ave}}</td>
+          <td>{{aveNormalTime}}</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div class="calculations">
+    <div class="column">
+      <div class="infobox2">
+        <div class="yellow title">
+          Standard Time
+        </div>
+        <div class="orange value">
+          {{standardTime}}
+        </div>
+        <div class="info">
+          The standard time above is computed by getting the average of the <span class="teal">normal time</span> given in each cycle multiplied by the appropriate <span class="teal">allowances (personal interruptions, fatigue, and unavoidable delays)</span>.
+        </div>
+        <div class="orange formula">
+          ST = (NT)(1 + Allowances)
+        </div>
+        <div class="info">
+          This is important so that a company knows how much time an average operator, working at a normal pace, can perform a specified task. The company can then plan accordingly with that knowledge in mind.
+        </div>
+      </div>
+    </div>
+    <div class="column">
+      <div class="infobox">
+        <div class="yellow title">
+          Normal Time
+        </div>
+        <div class="blue formula">
+          NT = (OT)(R)
+        </div>
+        <div class="info">
+          The normal time (per cycle) is found by adding the observed time of the elements in a cycle and multiplying this by the performance rating of that cycle. We use NT to find the standard time as seen above.
+        </div>
+      </div>
+      <div class="row">
+        <div class="column2 ">
+          <div class="orange title">
+            {{max.element}}
+          </div>
+          <div class="teal value2">
+            {{max.value}}
+          </div>
+          <div class="info">
+            This is the element that takes up the largest amount of time.
+          </div>
+        </div>
+        <div class="column2 ">
+          <div class="orange title">
+            {{min.element}}
+          </div>
+          <div class="teal value2">
+            {{min.value}}
+          </div>
+          <div class="info">
+            Furthermore, here, the shortest amount of time is spent.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
