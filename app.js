@@ -79,7 +79,6 @@ angular.module('formApp', ['ngAnimate', 'ui.router'])
 .controller('stopwatchController', function($scope, $stateParams, $interval, $state) {
     $("#stopwatch").css("display", "flex").hide().fadeIn(1000);
     $scope.formData = $stateParams;
-    $scope.formData = { title: "qqqq", elements: [{ id: "1", name: "dsad" }, { id: "2", name: "sada" }, { id: "3", name: "adada" }], allowances: "10" };
     $scope.time = {minutes: '00', seconds: '00.0'};
     $scope.running = false;
     $scope.lastElement = false;
@@ -197,7 +196,6 @@ angular.module('formApp', ['ngAnimate', 'ui.router'])
 .controller('resultsController', function($scope, $stateParams) {
   $("#results").css("display", "flex").hide().fadeIn(1000);
   $scope.input = $stateParams;
-  // $scope.input =  {log:[["0.2.8","0.6.3","0.5.1","0.14.2","0.9"],["0.2.7","0.2.4","0.3.5","0.8.6","1.0"]], title: "qqqq", elements: [{ id: "1", name: "dsad" }, { id: "2", name: "sada" }, { id: "3", name: "adada" }], allowances: "10", log2: [[2800,6300,5100,14200,"0.9"],[2700,2400,3500,8600,"0.1"]]};
   $scope.input.elements.push({id: "", name: "Total"});
   $scope.input.elements.push({id: "", name: "Rating"});
   $scope.input.elements.push({id: "", name: "NT"});
