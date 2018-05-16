@@ -5,48 +5,48 @@ angular.module('formApp', ['ngAnimate', 'ui.router'])
     $stateProvider
         .state('form', {
             url: '/form',
-            templateUrl: 'html/form.html',
+            templateUrl: 'static/form.html',
             controller: 'formController'
         })
 
         .state('form.profile', {
             url: '/title',
-            templateUrl: 'html/title.html'
+            templateUrl: 'static/title.html'
         })
 
         .state('form.elements', {
             url: '/elements',
-            templateUrl: 'html/elements.html'
+            templateUrl: 'static/elements.html'
         })
 
         .state('form.allowances', {
             url: '/allowances',
-            templateUrl: 'html/allowances.html'
+            templateUrl: 'static/allowances.html'
         })
 
         .state('stopwatch', {
             url: '/stopwatch',
             params: {title:null, elements:null, allowances:null},
-            templateUrl: 'html/stopwatch.html',
+            templateUrl: 'static/stopwatch.html',
             controller: 'stopwatchController',
         })
 
         .state('results', {
             url: '/results',
             params: {log: null, title: null, elements: null, allowances: null, log2: null},
-            templateUrl: 'html/results.html',
+            templateUrl: 'static/results.html',
             controller: 'resultsController',
         })
 
         .state('about', {
             url: '/about',
-            templateUrl: 'html/about.html',
+            templateUrl: 'static/about.html',
             controller: 'aboutController',
         })
 
         .state('credits', {
             url: '/credits',
-            templateUrl: 'html/credits.html',
+            templateUrl: 'static/credits.html',
             controller: 'creditsController',
         })
     $urlRouterProvider.otherwise('/form/title');
